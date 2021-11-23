@@ -1,25 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import Button from '@mui/material/Button';
+import Widget_Attaque from './Widgets/Widget_Attaque';
+import titre from './images'
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      return(
+          <div classname = "row">
+            <Widget_Attaque> </Widget_Attaque>
+            <img src={titre}> </img>
+          </div>
+      );
 }
 
 export default App;
