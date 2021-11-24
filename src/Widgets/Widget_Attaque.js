@@ -9,7 +9,7 @@ export default class Widget_Attaque extends Component{
         return(
             <div> 
             
-                <Button variant="contained">Hello World</Button>
+                
             
             </div>
         )

@@ -1,4 +1,5 @@
 import './App.css';
+import PrimarySearchAppBar from './components/Navbar'
 import Button from '@mui/material/Button';
 import Widget_Attaque from './Widgets/Widget_Attaque';
 import titre from './images/titre.png'
@@ -11,12 +12,14 @@ function App() {
           <div class = "row">
             <div class = "col-6 center">
               
+              <PrimarySearchAppBar/>
               <Widget_Attaque/>
+              
               <img src={titre}/>
 
+            </div>
           </div>
         </div>
-      </div>
       );
 }
 
