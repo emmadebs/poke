@@ -9,14 +9,14 @@ import Widget_Attaque from './Widgets/Widget_Attaque';
 function App() {
       return(
         <div class ="container">
+          <PrimarySearchAppBar/>
           <div class = "row">
 
-          <div class = "col center">
+          <div class = "col-12 center">
            {/* <img src={titre}/> */}
           </div>
-            <div class = "col center">
+            <div class = "col-12 center">
               
-              <PrimarySearchAppBar/>
               <Widget_Attaque/>
 
             </div>
