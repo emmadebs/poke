@@ -14,3 +14,11 @@
     font-family: RobotoMono;
 }
 
+.fondpk{
+    background-image : url("./fond.png");
+    background-size: cover;
+        background-color: rgb(0, 0, 0);
+        background-position: top left;
+        background-size: 100%;
+        background-repeat: no-repeat;
+}

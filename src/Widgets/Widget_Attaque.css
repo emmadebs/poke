@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'Roboto Mono', monospace;
-    src: url();
+    font-family: RobotoMono;
+    src: url(../police/RobotoMono-VariableFont_wght.ttf);
 }
 
 .rank{
