@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Roboto Mono', monospace;
+    src: url();
+}
+
+.rank{
+    font-family: 'Roboto Mono', sans-serif;
+    color:#000000
+}
