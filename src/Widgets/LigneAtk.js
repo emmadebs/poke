@@ -1,21 +1,31 @@
-import React, { Component } from "react";
-import Typography from '@mui/material/Typography';
-import pika from './pika.png'
-import 'Widget_Attaque.css';
-export default class LigneAtk extends Component{
+import React from 'react';
+import './LigneAtk.css';
+import {Row} from 'react-bootstrap';
+import {Col} from 'react-bootstrap';
+import pika from './pika.png';
+import './LigneAtk.css';
 
-   
+
+export default class DescriptionEquipe extends React.Component {
+    
     render() {
-        return(
-            <div class = "container">
-                <div class= "row">
-                    <div classname= "rank">
-                    1
-                    </div>
-                    <img src={pika}/>
-                    
+        return(            
+            <div className="contour">
+                <Row>
+                    <Col xs={6} >
+                        <img src={pika.png} alt="image du pok" className="plein"></img>
+                    </Col>
+                    <Col xs={6}>
+                        <div className="descriptionNom">
+                            Nom
+                        </div>
+                        <div className="descriptionConf">
+                            conférence
+                        </div>
+                    </Col>
+                </Row>
             </div>
-        </div>
-        )
+                
+        );
     }
 }

@@ -1,6 +1,16 @@
+@font-face {
+    font-family: RobotoMono;
+    src: url(./police/RobotoMono-VariableFont_wght.ttf);
+}
+
 .center {
     display: flex;
     justify-content: center;
     align-items: center;
     height:20vh;  
 }
+
+.mono{
+    font-family: RobotoMono;
+}
+
