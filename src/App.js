@@ -8,15 +8,11 @@ import {Container, Row, Col} from 'react-bootstrap';
 
 function App() {
       return(
-        <Container fluid classname="fondpk">
+        <Container className="dark">
 
           <PrimarySearchAppBar/>
 
-            <Row>
-
-           <div className ="mono">
-             zbeb
-           </div>
+            <Row fluid className="fondpk">
 
               <Col xs={6} md={6} lg={6} xl={6}>
               
@@ -29,7 +25,7 @@ function App() {
 
               </Col>
 
-            </Row>
+          </Row>
           </Container>
       );
 }

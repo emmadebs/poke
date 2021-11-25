@@ -11,7 +11,7 @@ export default class LigneAtk extends React.Component {
             <div className="contour">
                 <Row>
                     <Col xs={6} >
-                    <img src={this.props.logo} alt="logoEquipe" className="plein"></img>
+                    <img src={this.props.logo} alt="pokemon" className="plein"></img>
                     </Col>
                     <Col xs={6}>
                         <div className="descriptionNom">
