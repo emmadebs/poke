@@ -14,21 +14,9 @@
     font-family: RobotoMono;
 }
 
-.fondpk{
+body{
     background-color: #000;
     background-image : url("./images/fond.png");
-    background-size: cover;
-    opacity: 0.4;
-        
-        background-position: top left;
-        background-size: 100%;
-        background-repeat: no-repeat;
-}
-
-.dark{
-    background-color: #000;
-    background-size: cover;
-    background-position: top left;
     background-size: 100%;
-    background-repeat: no-repeat;
+
 }

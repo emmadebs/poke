@@ -12,6 +12,7 @@
     opacity: 0.7;
     padding: 2%;
     border-width: 0.5vw;
+    max-width : 20em;
 }
 
 .plein{

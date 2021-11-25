@@ -9,19 +9,19 @@ export default class LigneAtk extends React.Component {
     render() {
         return(            
             <div className="contour">
-                <Row>
-                    <Col xs={6} >
+             
+                   
                     <img src={this.props.logo} alt="pokemon" className="plein"></img>
-                    </Col>
-                    <Col xs={6}>
+                
+                   
                         <div className="descriptionNom">
                             Nom
                         </div>
                         <div className="stat">
                             Stat0
                         </div>
-                    </Col>
-                </Row>
+                    
+               
             </div>
                 
         );
