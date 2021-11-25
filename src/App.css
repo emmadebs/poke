@@ -15,7 +15,7 @@
 }
 
 .fondpk{
-    background-image : url("./fond.png");
+    background-image : url("./images/fond.png");
     background-size: cover;
         background-color: rgb(0, 0, 0);
         background-position: top left;
