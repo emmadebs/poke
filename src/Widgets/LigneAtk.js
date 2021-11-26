@@ -26,6 +26,11 @@ export default class LigneAtk extends React.Component {
                         <Col xs={7} md={7} lg={7} xl={7}>
                             <img src={BAtk} alt="barre" className="barre1"></img>
                         </Col>
+                        <Col xs={2} md={2} lg={2} xl={2}>
+                        <div className="chiffre">
+                            225
+                        </div>
+                        </Col>
                 
                 
                 

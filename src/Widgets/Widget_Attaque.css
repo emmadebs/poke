@@ -9,9 +9,9 @@
 }
 
 .contour{
-    background-color: rgb(0, 0, 0);
+    background-color: white;
     margin : 5%;
-    border-radius: 2vw;
+    border-radius: 1.5vw;
     border-style: solid;
     border-color: black;
     height: 30vh;

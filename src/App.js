@@ -4,18 +4,18 @@ import Widget_Attaque from './Widgets/Widget_Attaque';
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 
+
 function App() {
   return (
+    <div>
   
-      <><PrimarySearchAppBar />
-
-      <div>
+      <PrimarySearchAppBar />
         
       <Widget_Attaque />
 
       <Widget_Attaque />
 
-    </div></>
+    </div>
   );
 }
 
