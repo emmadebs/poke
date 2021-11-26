@@ -8,7 +8,11 @@ import LigneAtk from './LigneAtk';
 export default class Widget_Attaque extends Component{
     render() {
         return(
-                    <LigneAtk/>
+            <div className="contour">
+                <LigneAtk/>
+                <LigneAtk/>
+            </div>
+                    
         )
     }
 
