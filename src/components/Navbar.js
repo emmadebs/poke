@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -8,7 +8,9 @@ import InputBase from '@mui/material/InputBase';
 import Menu from '@mui/material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import MoreIcon from '@mui/icons-material/MoreVert';
-import titre from '../images/titre.png'
+import titre from '../images/titre.png';
+import axios from "axios";
+import "./Navbar.css";
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -111,38 +113,66 @@ export default function PrimarySearchAppBar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      
     </Menu>
   );
 
+  const [pokemon, setPokemon] = useState("pikachu");
+  const [pokemonData, setPokemonData] = useState([]);
+
+  const getPokemon = async () => {
+    const toArray = [];
+    try {
+      const url = `https://pokeapi.co/api/v2/pokemon/${pokemon}`
+      const res = await axios.get(url)
+      toArray.push(res.data);
+      setPokemonData(toArray);
+      console.log(res)
+    } catch (e) {
+      console.log(e)
+    };
+  }
+
+  const handleChange = (e) => {
+    setPokemon(e.target.value.toLowerCase());
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    getPokemon();
+  }
+
+
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <><Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
 
-        <img src={titre}/>
+          <input type="image" src={titre} href="location.href='Navbar.js'"></input>
 
-         
+          <Box display="flex"
+            width={600} height={80}
+            alignItems="center"
+            justifyContent="center">
 
-            <Box display="flex" 
-              width={600} height={80} 
-              alignItems="center"
-              justifyContent = "center">
-         
-              <Search>
+            <Search>
+              <form onSubmit={handleSubmit}>
                 <SearchIconWrapper>
                   <SearchIcon />
-                  </SearchIconWrapper>
+                </SearchIconWrapper>
                 <StyledInputBase
-                    placeholder="Chercher un Pok..."
-                    inputProps={{ 'aria-label': 'search' }}
+                  input="text"
+                  placeholder="Chercher un Pokemon"
+                  inputProps={{ 'aria-label': 'search' }}
+                  onChange={handleChange}
                 />
-              </Search>
-            </Box>
+              </form>
+            </Search>
+
+          </Box>
 
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            
+
           </Box>
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -161,5 +191,65 @@ export default function PrimarySearchAppBar() {
       {renderMobileMenu}
       {renderMenu}
     </Box>
+
+      <div className="App">
+        {pokemonData.map((data) => {
+          return (
+            <div className="widget">
+              <img className="imgPoke" src={data.sprites["front_default"]} />
+              <div className="divTable">
+                <div className="divTableBody">
+                  <div className="divTableRow">
+                    <div className="divTableCell">Name</div>
+                    <div className="divTableCell">{data.name}</div>
+                  </div>
+                  <div className="divTableRow">
+                    <div className="divTableCell">Type</div>
+                    <div className="divTableCell">{data.types[0].type.name}</div>
+                  </div>
+                  <div className="divTableRow">
+                    <div className="divTableCell">Height</div>
+                    <div className="divTableCell">{" "}{Math.round(data.height * 3.9)} "
+                    </div>
+                  </div>
+                  <div className="divTableRow">
+                    <div className="divTableCell">Weight</div>
+                    <div className="divTableCell">{" "}{Math.round(data.weight / 4.3)} lbs</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="divTable">
+                <div className="divTableBody">
+                  <div className="divTableRow">
+                    <div className="divTableCell">Stat Attack</div>
+                    <div className="divTableCell">{data.stats[1].base_stat}</div>
+                  </div>
+                  <div className="divTableRow">
+                    <div className="divTableCell">Stat Defense</div>
+                    <div className="divTableCell">{data.stats[2].base_stat}</div>
+                  </div>
+                  <div className="divTableRow">
+                    <div className="divTableCell">Stat Speed</div>
+                    <div className="divTableCell">{data.stats[5].base_stat}</div>
+                  </div>
+                  <div className="divTableRow">
+                    <div className="divTableCell">Stat special-attack</div>
+                    <div className="divTableCell">{data.stats[3].base_stat}</div>
+                  </div>
+                  <div className="divTableRow">
+                    <div className="divTableCell">Stat special-defense</div>
+                    <div className="divTableCell">{data.stats[4].base_stat}</div>
+                  </div>
+                  <div className="divTableRow">
+                    <div className="divTableCell">Stat health point</div>
+                    <div className="divTableCell">{data.stats[0].base_stat}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div></>
   );
 }
