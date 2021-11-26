@@ -10,6 +10,7 @@ export default class Widget_Attaque extends Component{
         return(
             <div className="contour">
                 <LigneAtk/>
+                
                 <LigneAtk/>
             </div>
                     
