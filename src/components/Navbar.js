@@ -201,6 +201,7 @@ export default function PrimarySearchAppBar() {
                 <div className="divTableBody">
                   <div className="divTableRow">
                     <div className="divTableCell">Name</div>
+                    
                     <div className="divTableCell">{data.name}</div>
                   </div>
                   <div className="divTableRow">

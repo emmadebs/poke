@@ -1,81 +1,61 @@
-import axios from "axios";
 import React, { useState } from 'react';
-import Pokedata from './Pokedata'
+import axios from "axios";
+import "../components/Navbar.css";
 
 
-const Tri = () => {
-
+export default function App () {
+    const [pokemon, setPokemon] = useState("pikachu");
     const [pokemonData, setPokemonData] = useState([]);
-    const [pokemonType, setPokemontype] = useState("");
-    var all = [];
+    const [test, setTest] = useState("");
 
-    const getPokemon = async () => {
-        const toArray = [];
-        var all = [];
-        var i = 0;
+    var topAtk = [0, 0, 0, 0, 0];
+    var topId = [];
+    var j = 0;
+    var i = 0;
+    var k = 0;
 
-        for (i = 0; i++; i < 10) {
-            try {
-                const url = `https://pokeapi.co/api/v2/pokemon/${i}`
-                const res = await axios.get(url)
-                toArray.push(res.data);
-                setPokemontype(res.data.types[0].type.name);
-                setPokemonData(toArray);
-                console.log(res)
+    var tri = (atk, id) => {
+        for (j = 0; j<5;j++) {
+            if (atk > topAtk[j]) {
+                topAtk[j] = atk;
+                topId[j] = id;
             }
-            catch (e) {
-                console.log(e)
-            };
         }
+    };
+
+    const getPokemon = async (id) => {
+        const toArray = [];
+        try {
+            const url = `https://pokeapi.co/api/v2/pokemon/${id}`
+            const res = await axios.get(url)
+            toArray.push(res.data);
+            setTest(res.data.stats[1].base_stat);
+            setPokemonData(toArray);
+            tri(res.data.stats[1].base_stat, res.data.id);
+
+            console.log(res)
+        } catch (e) {
+            console.log(e)
+        };
     }
 
-    //alert("coucou");
+
+    var triTotal = () => {
+
+        for(k=0;k<10;k++)
+        {
+            getPokemon(k);
+        }
+    }
 
 
 
     return (
-        <div class="App">
 
-        {getPokemon()}
-
-            {pokemonData.map((data) => {
-              let pokemonActuel = new Pokedata();
-
-
-                var nom=data.name;
-                var hp=data.stats[0].base_stat;
-                var atk= data.stats[1].base_stat;
-                var def=data.stats[2].base_stat;
-                var atkSpe=data.stats[3].base_stat;
-                var defSpe=data.stats[4].base_stat;
-                var speed=data.stats[5].base_stat;
-                var weight=data.weight / 4.3;
-                var height = data.height * 3.9;
-                var type = data.types[0].type.name;
-
-                pokemonActuel.nom=nom;
-                pokemonActuel.hp=hp;
-                pokemonActuel.atk=atk;
-                pokemonActuel.def=def;
-                pokemonActuel.atkSpe=atkSpe;
-                pokemonActuel.defSpe=defSpe;
-                pokemonActuel.speed=speed;
-                pokemonActuel.weight=weight;
-                pokemonActuel.height=height;
-                pokemonActuel.type=type;
-
-                
-
-                all.push(pokemonActuel);
-        return (
-            <div className="truc">
-              {all.atk}
-            </div>
-        );
-      })}
+        <div className="App">
+            {triTotal()}
+            {test}
         </div>
     );
 
-};
-
-export default Tri;
+}

@@ -13,7 +13,4 @@ class Pokedata {
       this.height = height;
       this.image = null;
     }
-    getNom(){
-        return this.nom
-    }
   }
