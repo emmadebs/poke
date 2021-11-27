@@ -1,22 +1,28 @@
 import axios from "axios";
 import React, { useState } from 'react';
+import "../components/Navbar.css";
 
-const Type = () => {
-    const [nbPokeType, setnbPokeType] = useState([]);
-    const [namePokeType, setnamePokeType] = useState([]);
+export default function Type () {
+    const [nbPokeType, setnbPokeType] = useState("");
+    const [namePokeType, setnamePokeType] = useState("");
+
     const url1 = `https://pokeapi.co/api/v2/pokemon/type/1`;
     const url2 = `https://pokeapi.co/api/v2/pokemon/type/2`;
     const url3 = `https://pokeapi.co/api/v2/pokemon/type/3`;
     const url4 = `https://pokeapi.co/api/v2/pokemon/type/4`;
     const url5 = `https://pokeapi.co/api/v2/pokemon/type/5`;
-    var nbParType = ['truc','truc2'];
-    var nameType = ['truc','truc2'];
+    var nbParType = 8;
+    var nameType = '';
 
     const getType = async () => {
-        const toArray = [];
         try {
             const res = await axios.get(url1)
-            toArray.push(res.data);
+            setnbPokeType(res.data.pokemon.length);
+            nbParType=nbPokeType;
+            setnamePokeType(res.data.name);
+            nameType=namePokeType;
+
+            /*res = await axios.get(url1)
             setnbPokeType(res.data.pokemon.length);
             nbParType[1] = nbPokeType;
             setnamePokeType(res.data.name);
@@ -38,26 +44,26 @@ const Type = () => {
             setnbPokeType(res.data.pokemon.length);
             nbParType[4] = nbPokeType;
             setnamePokeType(res.data.name);
-            nameType[4] = namePokeType;
+            nameType[4] = namePokeType;*/
 
-             res = await axios.get(url5)
-            setnbPokeType(res.data.pokemon.length);
-            nbParType[0] = nbPokeType;
-            setnamePokeType(res.data.name);
-            nameType[0] = namePokeType;
             console.log(res)
         } catch (e) {
             console.log(e)
         };
     } 
 
+    var appel= () => {
+
+        getType()
+    }
+
     return (
         <div class="App">
-            {namePokeType.map((data) => {
-          return (
             
             <div className="widget">
-                {getType()}
+                {appel()}
+                {nbParType}
+                {nameType}
                 <div className="divTable">
                     <div className="divTableBody">
                         <div className="divTableRow">
@@ -84,11 +90,7 @@ const Type = () => {
                     </div>
                 </div>
             </div>
-          );}
-            )}
         </div>
     );
 
 };
-
-export default Type;
