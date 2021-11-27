@@ -28,9 +28,7 @@ export default function App () {
         try {
             const url = `https://pokeapi.co/api/v2/pokemon/${id}`
             const res = await axios.get(url)
-            toArray.push(res.data);
             setTest(res.data.stats[1].base_stat);
-            setPokemonData(toArray);
             tri(res.data.stats[1].base_stat, res.data.id);
 
             console.log(res)
@@ -42,7 +40,7 @@ export default function App () {
 
     var triTotal = () => {
 
-        for(k=0;k<10;k++)
+        for(k=0;k<5;k++)
         {
             getPokemon(k);
         }
