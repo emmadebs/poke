@@ -1,3 +1,5 @@
+import { Update } from "@material-ui/icons";
+import { DisplaySettingsRounded } from "@mui/icons-material";
 import axios from "axios";
 import React, { useState } from 'react';
 import "../components/Navbar.css";
@@ -5,46 +7,18 @@ import "../components/Navbar.css";
 export default function Type () {
     const [nbPokeType, setnbPokeType] = useState("");
     const [namePokeType, setnamePokeType] = useState("");
+    var nbpok=[];
+    var nameType=[];
+    var nb=0;
 
-    const url1 = `https://pokeapi.co/api/v2/pokemon/type/1`;
-    const url2 = `https://pokeapi.co/api/v2/pokemon/type/2`;
-    const url3 = `https://pokeapi.co/api/v2/pokemon/type/3`;
-    const url4 = `https://pokeapi.co/api/v2/pokemon/type/4`;
-    const url5 = `https://pokeapi.co/api/v2/pokemon/type/5`;
-    var nbParType = 8;
-    var nameType = '';
+    var i=0;
 
-    const getType = async () => {
+    const getType = async (type) => {
         try {
-            const res = await axios.get(url1)
+            const url = `https://pokeapi.co/api/v2/type/${type}`
+            const res = await axios.get(url)
             setnbPokeType(res.data.pokemon.length);
-            nbParType=nbPokeType;
             setnamePokeType(res.data.name);
-            nameType=namePokeType;
-
-            /*res = await axios.get(url1)
-            setnbPokeType(res.data.pokemon.length);
-            nbParType[1] = nbPokeType;
-            setnamePokeType(res.data.name);
-            nameType[1] = namePokeType;
-
-           res = await axios.get(url2)
-            setnbPokeType(res.data.pokemon.length);
-            nbParType[2] = nbPokeType;
-            setnamePokeType(res.data.name);
-            nameType[2] = namePokeType;
-
-             res = await axios.get(url3)
-            setnbPokeType(res.data.pokemon.length);
-            nbParType[3] = nbPokeType;
-            setnamePokeType(res.data.name);
-            nameType[3] = namePokeType;
-
-             res = await axios.get(url4)
-            setnbPokeType(res.data.pokemon.length);
-            nbParType[4] = nbPokeType;
-            setnamePokeType(res.data.name);
-            nameType[4] = namePokeType;*/
 
             console.log(res)
         } catch (e) {
@@ -52,19 +26,23 @@ export default function Type () {
         };
     } 
 
-    var appel= () => {
+    var appel= (num) => {
 
-        getType()
+        getType(num);
+        nbpok[num]=nbPokeType;
+        nameType[num]=namePokeType;
     }
 
     return (
         <div class="App">
             
             <div className="widget">
-                {appel()}
-                {nbParType}
-                {nameType}
-                <div className="divTable">
+                
+                {appel(1)}
+                {nbpok[1]} {nameType[1]}
+                
+                
+                {/*<div className="divTable">
                     <div className="divTableBody">
                         <div className="divTableRow">
                             <div className="divTableCell">{nameType[1]}</div>
@@ -88,8 +66,8 @@ export default function Type () {
                         <div className="divTableCell">{nameType[0]}</div>
                         <div className="divTableCell">{nbParType[0]}</div>
                     </div>
-                </div>
-            </div>
+    </div>*/}
+    </div>
         </div>
     );
 
