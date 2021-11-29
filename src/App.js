@@ -16,7 +16,7 @@ function App() {
 
       <Type/>
 
-      <Tri2/>
+      <Attaque/>
         
       <Widget_Attaque />
 

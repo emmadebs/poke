@@ -17,8 +17,6 @@ export default function LigneAtk (props) {
         const [imgPoke, setimgPoke] = useState("");
 
         var atkpk=[];
-        var nameType=[];
-        var nb=0;
         var imgBar = null;
     
         var i=0;
@@ -44,30 +42,31 @@ export default function LigneAtk (props) {
 
         var chooseBar =(classement) =>
         {
-            switch (classement)
+            if(classement == 1)
             {
-                case 1:
-                    imgBar=A1;
-                    break;
-                case 2:
-                    imgBar=A2;
-                    break;
-                case 3:
-                    imgBar=A3;
-                    break;
-                case 4:
-                    imgBar=A4;
-                    break;
-                case 5:
-                    imgBar=A5;
-                    break;
-
+                imgBar=A1;
+            }
+            if(classement == 2)
+            {
+                imgBar=A2;
+            }
+            if(classement == 3)
+            {
+                imgBar=A3;
+            }
+            if(classement == 4)
+            {
+                imgBar=A4;
+            }
+            if(classement == 5)
+            {
+                imgBar=A5;
             }
 
         }
 
         return(            
-            
+
             <div className="ligne">
                 {appel(props.id)}
                 <Container>
@@ -80,12 +79,11 @@ export default function LigneAtk (props) {
                             </div>
                         </Col>
                         <Col xs={2} md={2} lg={2} xl={2}>
-                        <img className="img" src={imgPoke} />
-                            
+                            <img className="img" src={imgPoke} />
                         </Col>
                         <Col xs={7} md={7} lg={7} xl={7}>
                             {chooseBar(props.classm)}
-                            <img src={A1} alt="barre" className="barre1"></img>
+                            <img src={imgBar} alt="barre" className="barre1"></img>
                         </Col>
                         <Col xs={2} md={2} lg={2} xl={2}>
                         <div className="chiffre">

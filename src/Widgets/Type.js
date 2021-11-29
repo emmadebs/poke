@@ -9,9 +9,6 @@ export default function Type () {
     const [namePokeType, setnamePokeType] = useState("");
     var nbpok=[];
     var nameType=[];
-    var nb=0;
-
-    var i=0;
 
     const getType = async (type) => {
         try {
