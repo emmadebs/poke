@@ -1,7 +1,10 @@
 import {Container, Row, Col} from 'react-bootstrap';
 import './LigneAtk.css';
-import pika from '../images/pika.png'
 import A1 from '../images/A1.png'
+import A2 from '../images/A2.png'
+import A3 from '../images/A3.png'
+import A4 from '../images/A4.png'
+import A5 from '../images/A5.png'
 import axios from "axios";
 import React, { useState } from 'react';
 
@@ -16,7 +19,7 @@ export default function LigneAtk (props) {
         var atkpk=[];
         var nameType=[];
         var nb=0;
-        var imgBar;
+        var imgBar = null;
     
         var i=0;
     
@@ -39,24 +42,24 @@ export default function LigneAtk (props) {
             atkpk[num]=atkPoke;
         }
 
-        var chooseBar =(classmnt)=>
+        var chooseBar =(classement) =>
         {
-            switch (classmnt)
+            switch (classement)
             {
                 case 1:
-                    imgBar="A1";
+                    imgBar=A1;
                     break;
-                case 1:
-                    imgBar="A";
+                case 2:
+                    imgBar=A2;
                     break;
-                case 1:
-                    imgBar="A3";
+                case 3:
+                    imgBar=A3;
                     break;
-                case 1:
-                    imgBar="A4";
+                case 4:
+                    imgBar=A4;
                     break;
-                case 1:
-                    imgBar="A5";
+                case 5:
+                    imgBar=A5;
                     break;
 
             }
@@ -64,6 +67,7 @@ export default function LigneAtk (props) {
         }
 
         return(            
+            
             <div className="ligne">
                 {appel(props.id)}
                 <Container>
@@ -80,6 +84,7 @@ export default function LigneAtk (props) {
                             
                         </Col>
                         <Col xs={7} md={7} lg={7} xl={7}>
+                            {chooseBar(props.classm)}
                             <img src={A1} alt="barre" className="barre1"></img>
                         </Col>
                         <Col xs={2} md={2} lg={2} xl={2}>
@@ -87,10 +92,6 @@ export default function LigneAtk (props) {
                             {atkpk[props.id]}
                         </div>
                         </Col>
-                
-                
-                
-                
                     </Row>
                </Container>
             </div>

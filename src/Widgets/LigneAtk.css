@@ -15,6 +15,7 @@
     margin-left: 10%;
     color: #000000;
     font-size: 2.2vw;
+    font-weight: 500;
 }
 
 .stat{
@@ -22,7 +23,7 @@
     color: white;
     font-size: 1.4vw;
     font-family: RobotoMono;
-    height: 6.5hw;
+    height: 6.5 hw;
 }
 
 .img{
@@ -46,4 +47,13 @@
     margin-right: 10%;
     color: red;
     font-size: 1.8vw;
+    font-weight: 700;
+}
+
+.ligneG{
+    background-color: #FFFFFF;
+}
+
+.ligneW{
+    background-color: #CCCCCC;
 }

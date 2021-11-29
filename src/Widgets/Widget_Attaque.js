@@ -9,15 +9,15 @@ export default class Widget_Attaque extends Component{
     render() {
         return(
             <div className="contour">
-                <LigneAtk id="100" classm="1"/>
+                <LigneAtk id="798" classm="1" color="w"/>
                 
-                <LigneAtk id="101" classm="2"/>
+                <LigneAtk id="409" classm="2" color="g"/>
 
-                <LigneAtk id="102" classm="3"/>
+                <LigneAtk id="289" classm="3" color="w"/>
 
-                <LigneAtk id="49" classm="4"/>
+                <LigneAtk id="486" classm="4" color="g"/>
 
-                <LigneAtk id="32" classm="5"/>
+                <LigneAtk id="383" classm="5" color="w"/>
             </div>
                     
         )
