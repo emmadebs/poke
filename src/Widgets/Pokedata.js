@@ -1,3 +1,4 @@
+
 class Pokedata {
     constructor(nom, hp, atk, def, atkSpe, defSpe, speed, id, type, weight, height) {
       this.nom = nom;

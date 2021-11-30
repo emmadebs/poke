@@ -5,12 +5,14 @@ import Attaque from './Widgets/Attaque.js'
 import Type from './Widgets/Type.js'
 import Widget_Attaque from './Widgets/Widget_Attaque';
 import React from 'react';
+import DonuTypes from './Widgets/DonuTypes';
+import Raid from './Widgets/Raid'
 import { Container, Row, Col } from 'react-bootstrap';
 
 
 function App() {
   return (
-    <div>
+    <div className="body">
   
       <PrimarySearchAppBar />
 
@@ -20,7 +22,7 @@ function App() {
         
       <Widget_Attaque />
 
-      <Widget_Attaque />
+      <Raid/>
 
     </div>
   );

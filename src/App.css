@@ -15,7 +15,7 @@
     font-family: RobotoMono;
 }
 
-body{
+.body{
     background-image : url("./images/fond.png");
     opacity: 1;
     background-size: 100%;

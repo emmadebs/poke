@@ -10,11 +10,14 @@
 
 .contour{
     background-color: #FFFFFF;
-    margin : 5%;
+    margin-left: 5%;
+    margin-bottom: 5%;
+    margin-right: 5%;
+    margin-top: 1%;
     border-radius: 1.5vw;
     border-style: solid;
-    border-color: black;
-    opacity: 1;
+    border-color: #CCCCCC;
+    opacity: 0.85;
     height: 30wh;
     width: 40vw;
 }
@@ -73,4 +76,12 @@
 
 .imgPoke{
     height: 16em;
+}
+
+.titre_widget{
+    font-family: 'Roboto Mono';
+    color:#FFDCD4;
+    font-weight:700;
+    font-size: 2vw;
+    margin-left: 20vw;
 }

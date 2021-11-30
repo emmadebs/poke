@@ -87,7 +87,7 @@ export default function LigneAtk (props) {
                         </Col>
                         <Col xs={2} md={2} lg={2} xl={2}>
                         <div className="chiffre">
-                            {atkpk[props.id]}
+                            {atkpk[props.id]} 
                         </div>
                         </Col>
                     </Row>
