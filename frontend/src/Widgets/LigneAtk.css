@@ -1,0 +1,82 @@
+@font-face {
+    font-family: RobotoMono;
+    src: url("../police/RobotoMono-VariableFont_wght.ttf");
+  }
+
+
+.plein{
+    position: relative;
+    width: 100%;
+}
+
+.classm{
+    margin-top: 20%;
+    font-family: RobotoMono;
+    margin-left: 15%;
+    color: #000000;
+    font-size: 1.7vw;
+    font-weight: 500;
+}
+
+.stat{
+    margin-left: 10%;
+    color: white;
+    font-size: 1.4vw;
+    font-family: RobotoMono;
+    height: 6.5 hw;
+}
+
+.img{
+    margin-left: 0%;
+    margin-right: 0%;
+    height: 4vw;
+}
+
+.barre1{
+    margin-left: 0%;
+    margin-right: 0%;
+    margin-top: 5%;
+    height: 1.4vw;
+}
+
+.chiffre{
+    margin-top: 10%;
+    font-family: RobotoMono;
+    margin-left: 0%;
+    margin-right: 10%;
+    color: red;
+    font-size: 1.5vw;
+    font-weight: 700;
+}
+.chiffre_dessus{
+    margin-top: 50%;
+    font-family: RobotoMono;
+    margin-left: 0%;
+    margin-right: 10%;
+    color: black;
+    font-size: 1.5vw;
+    font-weight: 700;
+}
+
+.ligneG{
+    background-color: #FFFFFF;
+}
+
+.ligneW{
+    background-color: #CCCCCC;
+}
+
+.ligne_top{
+    background-color: #CCCCCC;
+}
+
+.titre_widget{
+    margin-top: 0%;
+    font-family: RobotoMono;
+    margin-left: 10%;
+    margin-right: 0%;
+    margin-bottom: 7%;
+    color: black;
+    font-size: 2vw;
+    font-weight: 700;
+}
