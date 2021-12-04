@@ -1,10 +1,12 @@
 const express= require('express');
 const mongoose =require('mongoose');
+const cors = require('cors');
 const app = express();
 
 const PokeModele = require("./modeles/Pokemon");
 
 app.use(express.json());
+app.use(cors());
 
 mongoose.connect("mongodb+srv://Tameh:Dino1919!@poki.l1a27.mongodb.net/Poketruc?retryWrites=true&w=majority",
 {
@@ -12,8 +14,9 @@ mongoose.connect("mongodb+srv://Tameh:Dino1919!@poki.l1a27.mongodb.net/Poketruc?
 }
 );
 
-app.get('/', async (req, res) =>{
-    const pokemon = new PokeModele({nom: "Charizard", atk: 10000});
+app.post('/insert', async (req, res) =>{
+    const nom = req.body.nom;
+    const pokemon = new PokeModele({nom: nom});
 
     try {
         await pokemon.save();

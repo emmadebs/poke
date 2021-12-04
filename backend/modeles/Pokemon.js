@@ -7,7 +7,7 @@ const PokeSchema = new mongoose.Schema({
     },
     atk: {
         type: Number,
-        required: true,
+        required: false,
     },
 });
 

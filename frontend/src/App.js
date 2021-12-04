@@ -1,5 +1,5 @@
 import './App.css';
-import PrimarySearchAppBar from './components/Navbar.js'
+import PrimarySearchAppBar from './components/NavbarEquipe.js'
 import Tri2 from './Widgets/Tri2.js'
 import Attaque from './Widgets/Attaque.js'
 import Type from './Widgets/Type.js'
@@ -16,13 +16,6 @@ function App() {
   
       <PrimarySearchAppBar />
 
-      <Type/>
-
-      <Attaque/>
-        
-      <Widget_Attaque />
-
-      <Raid/>
 
     </div>
   );

@@ -8,8 +8,9 @@ import InputBase from '@mui/material/InputBase';
 import Menu from '@mui/material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import MoreIcon from '@mui/icons-material/MoreVert';
+import Button from '@mui/material/Button';
 import titre from '../images/titre.png';
-import axios from "axios";
+import axios, { Axios } from "axios";
 import "./Navbar.css";
 
 const Search = styled('div')(({ theme }) => ({
@@ -128,6 +129,10 @@ export default function PrimarySearchAppBar() {
     };
   }
 
+  const chargerTeam = () =>{
+    Axios.post("http://localhost:3001/insert", {nom: pokemon});
+  }
+
   const handleChange = (e) => {
     setPokemon(e.target.value.toLowerCase());
   }
@@ -143,7 +148,7 @@ export default function PrimarySearchAppBar() {
       <AppBar position="static">
         <Toolbar>
 
-          <input type="image" src={titre} href="location.href='Navbar.js'"></input>
+          <input type="image" src={titre} onClick = "Accueil()"></input>
 
           <Box display="flex"
             width={600} height={80}
@@ -191,6 +196,7 @@ export default function PrimarySearchAppBar() {
       <div className="App">
         {pokemonData.map((data) => {
           return (
+            <div>
             <div className="widget">
               <img className="imgPoke" src={data.sprites["front_default"]} />
               <div className="divTable">
@@ -245,8 +251,14 @@ export default function PrimarySearchAppBar() {
                 </div>
               </div>
             </div>
+            <div>
+            <Button variant="contained" onClick={chargerTeam()}>Add to team</Button>
+              </div>
+              </div>
           );
         })}
+        <div>
+        </div>
       </div></>
   );
 }
