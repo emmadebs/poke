@@ -9,6 +9,10 @@ export default class Widget_Attaque extends Component{
     render() {
         return(
             <div className="contour">
+                <div className="titre_widget">
+                    TOP ATTACKER
+                </div>
+
                 <LigneAtk id="798" classm="1" color="w"/>
                 
                 <LigneAtk id="409" classm="2" color="g"/>

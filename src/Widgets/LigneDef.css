@@ -10,11 +10,11 @@
 }
 
 .classm{
-    margin-top: 20%;
+    margin-top: 0%;
     font-family: RobotoMono;
-    margin-left: 15%;
+    margin-left: 10%;
     color: #000000;
-    font-size: 1.7vw;
+    font-size: 2.2vw;
     font-weight: 500;
 }
 
@@ -29,23 +29,29 @@
 .img{
     margin-left: 0%;
     margin-right: 0%;
-    height: 4vw;
+    height: 3.5vw;
 }
 
 .barre1{
     margin-left: 0%;
     margin-right: 0%;
-    margin-top: 5%;
+    margin-top: 3%;
     height: 1.5vw;
 }
 
-.chiffre{
+.chiffre2{
     margin-top: 10%;
     font-family: RobotoMono;
     margin-left: 75%;
-    color: red;
+    color: rgb(55, 0, 255);
     font-size: 1.5vw;
     font-weight: 700;
 }
 
+.ligneG{
+    background-color: #FFFFFF;
+}
 
+.ligneW{
+    background-color: #CCCCCC;
+}

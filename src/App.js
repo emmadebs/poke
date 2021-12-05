@@ -1,26 +1,35 @@
 import './App.css';
-import PrimarySearchAppBar from './components/Navbar.js'
-import Tri2 from './Widgets/Tri2.js'
-import Attaque from './Widgets/Attaque.js'
-import Type from './Widgets/Type.js'
+import PrimarySearchAppBar from './components/Navbar.js';
 import Widget_Attaque from './Widgets/Widget_Attaque';
+import Widget_Defense from './Widgets/Widget_Defense';
 import React from 'react';
+import Type from './Widgets/Type';
 import { Container, Row, Col } from 'react-bootstrap';
 
 
 function App() {
   return (
     <div>
-  
+
       <PrimarySearchAppBar />
 
-      <Type/>
+      <Container>
+        <Row>
+        <Col xs={7} md={7} lg={7} xl={7}>
+          <Row>
 
-      <Tri2/>
-        
-      <Widget_Attaque />
+            <Widget_Attaque />
+          </Row>
+          <Row>
+            <Widget_Defense />
 
-      <Widget_Attaque />
+          </Row>
+        </Col>
+        <Col xs={5} md={5} lg={5} xl={5}>
+          <Type />
+        </Col>
+        </Row>
+      </Container>
 
     </div>
   );

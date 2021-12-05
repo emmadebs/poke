@@ -1,13 +1,13 @@
-
 @font-face {
     font-family: RobotoMono;
     src: url(../police/RobotoMono-VariableFont_wght.ttf);
 }
 
-.contour{
+
+.contour2{
     background-color: #ffffffd5;
     margin-left: 5%;
-    margin-bottom: 1%;
+    margin-bottom: 5%;
     margin-right: 5%;
     margin-top: 3%;
     border-radius: 1.5vw;
