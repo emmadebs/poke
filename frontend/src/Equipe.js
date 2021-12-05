@@ -12,8 +12,6 @@ import { Container, Row, Col } from 'react-bootstrap';
 function Equipe() {
   return (
     <div className="body">
-
-      <PrimarySearchAppBar/>
       <WidgetTeam/>
       
 

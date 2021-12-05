@@ -19,5 +19,6 @@ body{
     background-image : url("./images/fond.png");
     background-size: 100%;
     background-repeat: repeat;
+    background-attachment: fixed ;
 
 }
