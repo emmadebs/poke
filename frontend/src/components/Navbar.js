@@ -114,6 +114,7 @@ export default function PrimarySearchAppBar() {
   );
 
   const [pokemon, setPokemon] = useState("pikachu");
+  const [pokenom, setPokenom] = useState("");
   const [pokemonData, setPokemonData] = useState([]);
 
   const getPokemon = async () => {
@@ -123,15 +124,34 @@ export default function PrimarySearchAppBar() {
       const res = await axios.get(url)
       toArray.push(res.data);
       setPokemonData(toArray);
+      setPokenom(res.data.name);
       console.log(res)
     } catch (e) {
       console.log(e)
     };
   }
 
-  const chargerTeam = () =>{
-    Axios.post("http://localhost:3001/insert", {nom: pokemon});
-  }
+  function chargerTeam () {
+    
+    console.log("Load +1")
+    let databody = {
+        "nom": pokenom,
+    }
+
+    return fetch('http://localhost:3001/insert', {
+        method: 'POST',
+        body: JSON.stringify(databody),
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    })
+    .then(res => res.json())
+    .then(data => console.log(data)); 
+}
+
+const clicli =(e) => {
+  chargerTeam()
+}
 
   const handleChange = (e) => {
     setPokemon(e.target.value.toLowerCase());
@@ -252,7 +272,9 @@ export default function PrimarySearchAppBar() {
               </div>
             </div>
             <div>
-            <Button variant="contained" onClick={chargerTeam()}>Add to team</Button>
+            <form onClick={clicli}>
+            <Button variant="contained" >Add to team</Button>
+              </form>
               </div>
               </div>
           );

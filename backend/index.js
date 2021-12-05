@@ -2,11 +2,18 @@ const express= require('express');
 const mongoose =require('mongoose');
 const cors = require('cors');
 const app = express();
+const router = express.Router();
+const conx = mongoose.connection;
+var bodyParser = require('body-parser')
 
 const PokeModele = require("./modeles/Pokemon");
 
 app.use(express.json());
 app.use(cors());
+  app.use(bodyParser.json({
+    limit: '50mb',
+    parameterLimit: 100000
+  }))
 
 mongoose.connect("mongodb+srv://Tameh:Dino1919!@poki.l1a27.mongodb.net/Poketruc?retryWrites=true&w=majority",
 {
@@ -14,15 +21,18 @@ mongoose.connect("mongodb+srv://Tameh:Dino1919!@poki.l1a27.mongodb.net/Poketruc?
 }
 );
 
-app.post('/insert', async (req, res) =>{
+app.post('/insert', async (req, res) => {
+    console.log(req.body);
     const nom = req.body.nom;
-    const pokemon = new PokeModele({nom: nom});
-
-    try {
-        await pokemon.save();
-        }
-    catch(err) {
-        console.log(err);
+    
+    const Pokemon = new PokeModele({nom:nom});
+    try{
+      await Pokemon.save();
+      res.send("data dans db !")
+    }
+    catch(err)
+    {
+      console.log(err);
     }
 });
 

@@ -10,8 +10,6 @@ import { Container, Row, Col } from 'react-bootstrap';
 function Accueil() {
   return (
     <div className="body">
-  
-      <PrimarySearchAppBar />
 
       ACCUEIL
 
