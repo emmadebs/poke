@@ -5,6 +5,7 @@ import Widget_Defense from './Widgets/Widget_Defense';
 import React from 'react';
 import Type from './Widgets/Type';
 import { Container, Row, Col } from 'react-bootstrap';
+import MonPoke from './Widgets/MonPoke';
 
 
 function App() {
@@ -24,6 +25,9 @@ function App() {
             <Widget_Defense />
 
           </Row>
+          <Row>
+            <MonPoke/>
+          </Row>
         </Col>
         <Col xs={5} md={5} lg={5} xl={5}>
           <Type />
@@ -36,3 +40,4 @@ function App() {
 }
 
 export default App;
+

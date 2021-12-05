@@ -14,9 +14,11 @@ export default function LigneDef (props) {
         
         const [defPoke, setdefPoke] = useState("");
         const [imgPoke, setimgPoke] = useState("");
+        const [namePoke, setnamePoke]= useState("");
 
         var defpk=[];
         var imgBar = null;
+        var name = [];
 
         const getType = async (id) => {
             try {
@@ -24,7 +26,7 @@ export default function LigneDef (props) {
                 const res = await axios.get(url)
                 setdefPoke(res.data.stats[2].base_stat);
                 setimgPoke(res.data.sprites["front_default"])
-    
+                setnamePoke(res.data.name);
                 console.log(res)
             } catch (e) {
                 console.log(e)
@@ -35,6 +37,7 @@ export default function LigneDef (props) {
     
             getType(num);
             defpk[num]=defPoke;
+            name[num]=namePoke;
         }
 
         var chooseBar =(classement) =>
@@ -81,6 +84,7 @@ export default function LigneDef (props) {
                         <Col xs={7} md={7} lg={7} xl={7}>
                             {chooseBar(props.classm)}
                             <img src={imgBar} className="barre1"></img>
+                            <i>{namePoke}</i>
                         </Col>
                         <Col xs={2} md={2} lg={2} xl={2}>
                         <div className="chiffre2">

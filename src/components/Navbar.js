@@ -129,12 +129,22 @@ export default function PrimarySearchAppBar() {
   }
 
   const handleChange = (e) => {
-    setPokemon(e.target.value.toLowerCase());
+    if(e==null){
+        setPokemon("rien");
+    }
+    else if (e!=null){
+        setPokemon(e.target.value.toLowerCase());
+    }
   }
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    getPokemon();
+    if(e==null){
+      
+    }
+    else if (e!=null){
+      e.preventDefault();
+      getPokemon();
+    }
   }
 
 
@@ -143,7 +153,7 @@ export default function PrimarySearchAppBar() {
       <AppBar position="static">
         <Toolbar>
 
-          <input type="image" src={titre} href="location.href='Navbar.js'"></input>
+          <input type="image" src={titre} href="location.href='App.js'"></input>
 
           <Box display="flex"
             width={600} height={80}
@@ -239,7 +249,7 @@ export default function PrimarySearchAppBar() {
                     <div className="divTableCell">{data.stats[4].base_stat}</div>
                   </div>
                   <div className="divTableRow">
-                    <div className="divTableCell">Stat health point</div>
+                    <div className="divTableCell">Stat hit points</div>
                     <div className="divTableCell">{data.stats[0].base_stat}</div>
                   </div>
                 </div>
