@@ -129,22 +129,18 @@ export default function PrimarySearchAppBar() {
   }
 
   const handleChange = (e) => {
-    if(e==null){
-        setPokemon("rien");
-    }
-    else if (e!=null){
         setPokemon(e.target.value.toLowerCase());
-    }
+        if (!pokemon) {
+          return;
+        }
   }
 
   const handleSubmit = (e) => {
-    if(e==null){
-      
-    }
-    else if (e!=null){
       e.preventDefault();
+      if (!pokemon) {
+        return;
+      }
       getPokemon();
-    }
   }
 
 
@@ -167,7 +163,7 @@ export default function PrimarySearchAppBar() {
                 </SearchIconWrapper>
                 <StyledInputBase
                   input="text"
-                  placeholder="Chercher un Pokemon"
+                  placeholder="Cherchez un Pokemon"
                   inputProps={{ 'aria-label': 'search' }}
                   onChange={handleChange}
                 />

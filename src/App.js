@@ -6,7 +6,7 @@ import React from 'react';
 import Type from './Widgets/Type';
 import { Container, Row, Col } from 'react-bootstrap';
 import MonPoke from './Widgets/MonPoke';
-
+import Meteo from './Widgets/Meteo';
 
 function App() {
   return (
@@ -23,10 +23,9 @@ function App() {
           </Row>
           <Row>
             <Widget_Defense />
-
           </Row>
           <Row>
-            <MonPoke/>
+            <Meteo/>
           </Row>
         </Col>
         <Col xs={5} md={5} lg={5} xl={5}>
