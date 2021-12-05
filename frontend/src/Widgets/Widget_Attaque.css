@@ -1,87 +1,28 @@
+
 @font-face {
     font-family: RobotoMono;
     src: url(../police/RobotoMono-VariableFont_wght.ttf);
 }
 
-.rank{
-    font-family: 'Roboto Mono', sans-serif;
-    color:#000000
-}
-
 .contour{
-    background-color: #FFFFFF;
+    background-color: #ffffffd5;
     margin-left: 5%;
-    margin-bottom: 5%;
+    margin-bottom: 1%;
     margin-right: 5%;
-    margin-top: 1%;
+    margin-top: 3%;
     border-radius: 1.5vw;
     border-style: solid;
     border-color: #CCCCCC;
-    opacity: 0.85;
     height: 30wh;
     width: 40vw;
 }
-.App {
-    text-align: center; 
-}
-
-.divTable{
-    display : table;
-    max-width : 20em;
-    float: right;
-    display: flex;
-    align-items: center;
-    padding-right: 10px;
-}
-
-.divTableRow{
-    display: table-row;
-}
-
-.divTableHeading{
-    background-color: #eee;
-    display: table-header-group;
-    font-weight: bold;
-}
-
-.divTableCell,
-.divTableHead{
-    border: 1px solid #ffffff;
-    display: table-cell;
-    padding: 3px 10px;
-}
-
-.divTableFoot{
-    background-color: #eee;
-    display: table-footer-group;
-    font-weight: bold;
-}
-
-.divTableBody{
-    display: table-row-group; 
-}
-
-.divTableCell{
-    background-color: gainsboro;
-    font-weight: bold;
-}
-
-.widget{
-    display: flex;
-    background-color: #ffffffa8;
-    justify-content: center;
-    margin: 5%;
-
-}
-
-.imgPoke{
-    height: 16em;
-}
 
 .titre_widget{
-    font-family: 'Roboto Mono';
-    color:#FFDCD4;
-    font-weight:700;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    font-family: RobotoMono;
+    color: #000000;
     font-size: 2vw;
-    margin-left: 20vw;
+    font-weight: 700;
+    text-align: center;
 }

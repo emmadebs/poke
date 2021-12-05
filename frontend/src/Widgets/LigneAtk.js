@@ -10,16 +10,14 @@ import React, { useState } from 'react';
 
 
 export default function LigneAtk (props) {
-    
- 
         
         const [atkPoke, setatkPoke] = useState("");
         const [imgPoke, setimgPoke] = useState("");
+        const [namePoke, setnamePoke]= useState("");
 
         var atkpk=[];
         var imgBar = null;
-    
-        var i=0;
+        var name=[];
     
         const getType = async (id) => {
             try {
@@ -27,7 +25,7 @@ export default function LigneAtk (props) {
                 const res = await axios.get(url)
                 setatkPoke(res.data.stats[1].base_stat);
                 setimgPoke(res.data.sprites["front_default"])
-    
+                setnamePoke(res.data.name);
                 console.log(res)
             } catch (e) {
                 console.log(e)
@@ -38,35 +36,35 @@ export default function LigneAtk (props) {
     
             getType(num);
             atkpk[num]=atkPoke;
+            name[num]=namePoke;
         }
 
         var chooseBar =(classement) =>
         {
-            if(classement == 1)
+            if(classement==1)
             {
                 imgBar=A1;
             }
-            if(classement == 2)
+            if(classement==2)
             {
                 imgBar=A2;
             }
-            if(classement == 3)
+            if(classement==3)
             {
                 imgBar=A3;
             }
-            if(classement == 4)
+            if(classement==4)
             {
                 imgBar=A4;
             }
-            if(classement == 5)
+            if(classement==5)
             {
                 imgBar=A5;
-            }
-
+            }              
         }
 
         return(            
-
+            
             <div className="ligne">
                 {appel(props.id)}
                 <Container>
@@ -79,15 +77,17 @@ export default function LigneAtk (props) {
                             </div>
                         </Col>
                         <Col xs={2} md={2} lg={2} xl={2}>
-                            <img className="img" src={imgPoke} />
+                        <img className="img" src={imgPoke} />
+                            
                         </Col>
                         <Col xs={7} md={7} lg={7} xl={7}>
                             {chooseBar(props.classm)}
                             <img src={imgBar} alt="barre" className="barre1"></img>
+                            <i>{namePoke}</i>
                         </Col>
                         <Col xs={2} md={2} lg={2} xl={2}>
                         <div className="chiffre">
-                            {atkpk[props.id]} 
+                            {atkpk[props.id]}
                         </div>
                         </Col>
                     </Row>

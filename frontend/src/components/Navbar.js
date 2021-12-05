@@ -127,7 +127,7 @@ export default function PrimarySearchAppBar() {
     </Menu>
   );
 
-  const [pokemon, setPokemon] = useState("pikachu");
+  const [pokemon, setPokemon] = useState("");
   const [pokenom, setPokenom] = useState("");
   const [pokemonData, setPokemonData] = useState([]);
 
@@ -175,14 +175,20 @@ const clicli =(e) => {
   chargerTeam();
 }
 
-  const handleChange = (e) => {
-    setPokemon(e.target.value.toLowerCase());
+const handleChange = (e) => {
+  setPokemon(e.target.value.toLowerCase());
+  if (!pokemon) {
+    return;
   }
+}
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    getPokemon();
-  }
+const handleSubmit = (e) => {
+e.preventDefault();
+if (!pokemon) {
+  return;
+}
+getPokemon();
+}
 
 
   return (
@@ -289,7 +295,7 @@ const clicli =(e) => {
             <div>
             <form onClick={clicli}>
             <Button variant="contained" >Add to team</Button>
-              </form>
+            </form>
               </div>
               </div>
           );

@@ -1,0 +1,28 @@
+@font-face {
+    font-family: RobotoMono;
+    src: url(../police/RobotoMono-VariableFont_wght.ttf);
+}
+
+
+.contour2{
+    background-color: #ffffffd5;
+    margin-left: 5%;
+    margin-bottom: 1%;
+    margin-right: 5%;
+    margin-top: 3%;
+    border-radius: 1.5vw;
+    border-style: solid;
+    border-color: #CCCCCC;
+    height: 30wh;
+    width: 40vw;
+}
+
+.titre_widget{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    font-family: RobotoMono;
+    color: #000000;
+    font-size: 2vw;
+    font-weight: 700;
+    text-align: center;
+}

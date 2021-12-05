@@ -1,21 +1,40 @@
 import './App.css';
-import PrimarySearchAppBar from './components/Navbar.js'
-import Tri2 from './Widgets/Tri2.js'
-import Attaque from './Widgets/Attaque.js'
-import Type from './Widgets/Type.js'
+import PrimarySearchAppBar from './components/Navbar.js';
 import Widget_Attaque from './Widgets/Widget_Attaque';
+import Widget_Defense from './Widgets/Widget_Defense';
 import React from 'react';
-import Raid from './Widgets/Raid'
-import Accueil from './Accueil';
+import Type from './Widgets/Type';
 import { Container, Row, Col } from 'react-bootstrap';
-import Routes from './Routes.js';
-import Equipe from './Equipe.js';
-
+import Meteo from './Widgets/Meteo';
+import Equipe from './Equipe';
 
 function App() {
   return (
-    <div className="body">
-      <Equipe/>
+    <div>
+
+      <PrimarySearchAppBar />
+
+      <Container>
+        <Row>
+        <Col xs={7} md={7} lg={7} xl={7}>
+          <Row>
+
+            <Widget_Attaque />
+          </Row>
+          <Row>
+            <Widget_Defense />
+          </Row>
+          <Row>
+            <Meteo/>
+          </Row>
+        </Col>
+        <Col xs={5} md={5} lg={5} xl={5}>
+          <Type />
+        </Col>
+        </Row>
+        <Equipe></Equipe>
+      </Container>
+
     </div>
   );
 }
