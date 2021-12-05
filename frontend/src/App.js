@@ -9,13 +9,13 @@ import Raid from './Widgets/Raid'
 import Accueil from './Accueil';
 import { Container, Row, Col } from 'react-bootstrap';
 import Routes from './Routes.js';
+import Equipe from './Equipe.js';
 
 
 function App() {
   return (
     <div className="body">
-      <PrimarySearchAppBar/>
-      <Accueil/>
+      <Equipe/>
     </div>
   );
 }

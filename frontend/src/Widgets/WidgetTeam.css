@@ -1,0 +1,9 @@
+.title{
+    font-size: 36px;
+    color: white;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vw;
+}

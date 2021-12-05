@@ -7,6 +7,7 @@ const conx = mongoose.connection;
 var bodyParser = require('body-parser')
 
 const PokeModele = require("./modeles/Pokemon");
+const Pokemon = require('./modeles/Pokemon');
 
 app.use(express.json());
 app.use(cors());
@@ -41,8 +42,21 @@ app.get("/read", async (req, res) => {
     if(err){
       res.send(err)
     }
+    console.log(result);
     res.send(result);
   });
+});
+
+app.delete("/delete/:nom", async (req, res) => {
+    const nom = req.body.nom;
+    try{
+      await PokeModele.findByIdAndRemove(nom).exec()
+    res.send("deleted");
+    }
+    catch(err)
+    {
+      console.log(err)
+    }
 });
 
 app.listen(3001, () =>{
