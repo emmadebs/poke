@@ -15,24 +15,9 @@
     font-family: RobotoMono;
 }
 
-.body{
+body{
     background-image : url("./images/fond.png");
-    opacity: 1;
     background-size: 100%;
-    background-repeat: no-repeat;
-    
-}
+    background-repeat: repeat;
 
-.contour{
-    background-color: rgb(0, 0, 0);
-    margin : 5%;
-    border-radius: 2vw;
-    border-style: solid;
-    border-color: black;
-    opacity: 1;
-}
-
-.dark{
-    background: #000000;
-    opacity: 0.5;
 }
