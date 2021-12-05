@@ -5,21 +5,17 @@ import Attaque from './Widgets/Attaque.js'
 import Type from './Widgets/Type.js'
 import Widget_Attaque from './Widgets/Widget_Attaque';
 import React from 'react';
-import DonuTypes from './Widgets/DonuTypes';
 import Raid from './Widgets/Raid'
 import Accueil from './Accueil';
 import { Container, Row, Col } from 'react-bootstrap';
+import Routes from './Routes.js';
 
 
 function App() {
   return (
     <div className="body">
-  
-      <PrimarySearchAppBar />
-
-      Accueil
-
-
+      <PrimarySearchAppBar/>
+      <Accueil/>
     </div>
   );
 }

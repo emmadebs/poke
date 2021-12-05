@@ -1,17 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
-import Menu from '@mui/material/Menu';
+import Badge from '@mui/material/Badge';
+import {
+  Menu,
+  MenuList,
+  MenuButton,
+  MenuItem,
+  MenuItems,
+  MenuPopover,
+  MenuLink,
+} from "@reach/menu-button";
+import "@reach/menu-button/styles.css";
+import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import Button from '@mui/material/Button';
 import titre from '../images/titre.png';
 import axios, { Axios } from "axios";
 import "./Navbar.css";
+import Routes from '../Routes.js'
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -52,6 +65,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
   },
 }));
+
 
 export default function PrimarySearchAppBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -131,12 +145,20 @@ export default function PrimarySearchAppBar() {
     };
   }
 
+  /*useEffect(()=> {
+    Axios.get('http://localhost:3001/read').then((response) => {
+    console.log(response);
+    })
+  },[])*/
+
   function chargerTeam () {
     
     console.log("Load +1")
     let databody = {
         "nom": pokenom,
     }
+
+    
 
     return fetch('http://localhost:3001/insert', {
         method: 'POST',
@@ -150,7 +172,7 @@ export default function PrimarySearchAppBar() {
 }
 
 const clicli =(e) => {
-  chargerTeam()
+  chargerTeam();
 }
 
   const handleChange = (e) => {
@@ -167,7 +189,7 @@ const clicli =(e) => {
     <><Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-
+        
           <input type="image" src={titre} onClick = "Accueil()"></input>
 
           <Box display="flex"
@@ -175,7 +197,8 @@ const clicli =(e) => {
             alignItems="center"
             justifyContent="center">
 
-            <Search>
+<div className = "margeL">
+            <Search >
               <form onSubmit={handleSubmit}>
                 <SearchIconWrapper>
                   <SearchIcon />
@@ -188,25 +211,17 @@ const clicli =(e) => {
                 />
               </form>
             </Search>
+            </div>
+
+            <div className = "ekip">
+
+            <Button  variant="contained" href="Equipe.js" >
+              team
+            </Button>
+            </div>
 
           </Box>
 
-          <Box sx={{ flexGrow: 1 }} />
-          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-
-          </Box>
-          <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              size="large"
-              aria-label="show more"
-              aria-controls={mobileMenuId}
-              aria-haspopup="true"
-              onClick={handleMobileMenuOpen}
-              color="inherit"
-            >
-              <MoreIcon />
-            </IconButton>
-          </Box>
         </Toolbar>
       </AppBar>
       {renderMobileMenu}
