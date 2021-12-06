@@ -3,7 +3,6 @@ import "./MonPoke.css";
 import pv from '../images/pv.jpg';
 import {Container, Row, Col} from 'react-bootstrap';
 import axios, { Axios } from "axios";
-import Button from '@mui/material/Button';
 
 
 export default function MonPoke (props){
@@ -67,9 +66,11 @@ export default function MonPoke (props){
                             {pokemonType}
                         </Row>
                         <Row>
+                            <div className="resp">
                         <form onClick={clicli}>
-                            <Button onclick={() => clicli()} variant="contained" >delete</Button>
+                            {/*<Button onclick={() => clicli()} variant="contained" >delete</Button>*/}
                         </form>
+                        </div>
                         </Row>
                         </div>
                     </Col>

@@ -46,7 +46,7 @@ app.get("/read", async (req, res) => {
     res.send(result);
   });
 });
-
+/*
 app.delete("/delete/:nom", async (req, res) => {
     const nom = req.body.nom;
     try{
@@ -57,7 +57,7 @@ app.delete("/delete/:nom", async (req, res) => {
     {
       console.log(err)
     }
-});
+});*/
 
 app.listen(3001, () =>{
     console.log('Server running on port 3001 !');

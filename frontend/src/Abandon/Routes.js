@@ -1,6 +1,6 @@
 import React from 'react';
 import {Route, Routes} from 'react-router-dom'
-import Equipe from './Equipe.js'
+import Equipe from '../Equipe.js'
 import Accueil from './Accueil.js';
 
 

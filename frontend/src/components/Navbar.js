@@ -3,28 +3,16 @@ import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
-import Badge from '@mui/material/Badge';
 import {
   Menu,
-  MenuList,
-  MenuButton,
-  MenuItem,
-  MenuItems,
-  MenuPopover,
-  MenuLink,
 } from "@reach/menu-button";
 import "@reach/menu-button/styles.css";
-import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
-import MoreIcon from '@mui/icons-material/MoreVert';
 import Button from '@mui/material/Button';
 import titre from '../images/titre.png';
 import axios, { Axios } from "axios";
 import "./Navbar.css";
-import Routes from '../Routes.js'
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -286,7 +274,7 @@ getPokemon();
                     <div className="divTableCell">{data.stats[4].base_stat}</div>
                   </div>
                   <div className="divTableRow">
-                    <div className="divTableCell">Stat health point</div>
+                    <div className="divTableCell">Stat heal point</div>
                     <div className="divTableCell">{data.stats[0].base_stat}</div>
                   </div>
                 </div>

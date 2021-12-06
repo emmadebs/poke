@@ -1,6 +1,5 @@
 import {Container, Row, Col} from 'react-bootstrap';
 import './LigneAtk.css';
-import React, { useState } from 'react';
 
 
 export default function Ligne_dessus () {

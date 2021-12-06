@@ -84,7 +84,7 @@ export default function LigneDef (props) {
                         <Col xs={7} md={7} lg={7} xl={7}>
                             {chooseBar(props.classm)}
                             <img src={imgBar} className="barre1"></img>
-                            <i>{namePoke}</i>
+                           <div className = " resp"><i>{namePoke}</i></div>
                         </Col>
                         <Col xs={2} md={2} lg={2} xl={2}>
                         <div className="chiffre2">

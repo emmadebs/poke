@@ -1,6 +1,12 @@
 import axios from "axios";
 import React, { useState } from "react";
 import './Meteo.css';
+import ice from '../images/ice.png';
+import fire from '../images/fire.png';
+import water from '../images/water.png';
+import flying from '../images/flying.png';
+import electric from '../images/electric.png';
+import ghost from '../images/ghost.png';
 
 const APIKEY = "4081444b7b90198136fefe6ed4ccf35b";
 const API_URL_ICON = "http://openweathermap.org/img/wn/"; //http://openweathermap.org/img/wn/10d@2x.png
@@ -8,6 +14,7 @@ const API_URL_ICON = "http://openweathermap.org/img/wn/"; //http://openweatherma
 export default function Meteo() {
   const [city, setCity] = useState("");
   const [result, setResult] = useState([]);
+  var imgmeteo = ("");
 
   const getWeather = async (e) => {
     e.preventDefault();
@@ -26,8 +33,14 @@ export default function Meteo() {
     };
   }
 
-  var getHTMLElementFromIcon = async (icon) =>{
-    return `http://openweathermap.org/img/wn/${icon}@2x.png`;
+  const getHTMLElementFromIcon = async (icon) =>{
+
+    const urlI = `http://openweathermap.org/img/wn/${icon}@2x.png`;
+    imgmeteo = urlI;
+  }
+
+  var meteo = (icon) =>{
+    getHTMLElementFromIcon(icon);
   }
 
 
@@ -45,12 +58,19 @@ export default function Meteo() {
           return(
             <><div>{data.weather[0].main}</div>
             <div>{data.weather[0].description}</div>
-            <img src={getHTMLElementFromIcon(data.weather[0].icon)} /> 
+            {meteo(data.weather[0].icon)}
+            <img src={imgmeteo} />
             <div>Temperature: {" "}{Math.round(data.main.temp - 273.15)} °C</div>
             <div> High: {" "}{Math.round(data.main.temp_max - 273.15)} °C</div>
             <div>Low: {" "}{Math.round(data.main.temp_min - 273.15)} °C</div></>
           );
       })}
+        <div>En temps de pluie : <img src={water} className="imageType "/> /
+        En temps ensoleillé : <img src={fire} className="imageType "/> /
+       En temps orageux : <img src={electric} className="imageType "/> /
+       En temps venteux : <img src={flying} className="imageType "/> /
+        En temps neigeux : <img src={ice} className="imageType "/> /
+        En temps de brouillard : <img src={ghost} className="imageType "/> </div>
        </div> 
     </div>
   );
